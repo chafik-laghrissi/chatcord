@@ -70,7 +70,7 @@ io.on('connection', socket => {
 
 const PORT = process.env.PORT || 3000;
 
-server.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 // socket.emit('message', "this is a test"); //sending to sender-client only
 // socket.broadcast.emit('message', "this is a test"); //sending to all clients except sender

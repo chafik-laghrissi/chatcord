@@ -1,0 +1,19 @@
+name: build-chatcord
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: echo $GC_PAT | docker login ghcr.io -u chafik-laghrissi --password-stdin
+      env:
+        $GC_PAT: ${{secrets.GC_PAT}}
+    - run: docker build ghcr.io/jonashackt/chatcord .
+    - run: docker push ghcr.io/jonashackt/chatcord
+      
+      

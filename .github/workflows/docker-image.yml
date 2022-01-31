@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - env:
-        $GC_PAT: ${{secrets.GC_PAT}}
+        GC_PAT: ${{secrets.GC_PAT}}
     - run: echo $GC_PAT
     - run: echo $GC_PAT | docker login ghcr.io -u chafik-laghrissi --password-stdin
     - run: docker build ghcr.io/jonashackt/chatcord .
